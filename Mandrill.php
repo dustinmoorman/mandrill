@@ -15,7 +15,7 @@
  *      '55555555555ANJCuUF-qg'
  *  );
  *
- *  $m->setTransmission($html);
+ *  $m->setHTML($html);
  *  $m->addRecipient('mistayayha@gmail.com', 'Yishai');
  *  $m->send();
  *
@@ -28,8 +28,6 @@ class Mandrill {
     protected $from_email;
     protected $reply_to;
     protected $api_key;
-    protected $transmission = '';
-    public $lastTransmissionPayload = '';
 
     public function __construct($from_name, $from_email, $reply_to, $api_key){
         $this->setFromName($from_name);
@@ -39,7 +37,7 @@ class Mandrill {
     }
 
     public function send(){
-        
+
         $transmission = array(
             'key' => $this->api_key,
             'message' => array(
@@ -60,21 +58,21 @@ class Mandrill {
                 'url_strip_qs' => null,
                 'preserve_recipients' => null,
                 'view_content_link' => null,
+                'tracking_domain' => null,
+                'signing_domain' => null,
+                'return_path_domain' => null
             ),
             'async' => false,
             'ip_pool' => 'Main Pool'
         );
 
-        if(strlen($this->transmission) < 1) throw new \Exception('Transmission Not Set');
-        $this->lastTransmissionPayload = $this->transmission;
-
         $ch = curl_init();
         curl_setopt($ch,CURLOPT_URL, "http://mandrillapp.com/api/1.0/messages/send.json");
         curl_setopt($ch,CURLOPT_POST, 1);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($this->transmission));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($transmission));
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen(json_encode($this->transmission))));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen(json_encode($transmission))));
 
         $result = curl_exec($ch);
         curl_close($ch);
