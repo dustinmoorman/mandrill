@@ -1,0 +1,4 @@
+mandrill
+========
+
+Mandrill PHP client.
