@@ -1,0 +1,20 @@
+{
+    "name": "dustinmoorman/mandrill",
+    "description": "Simple Mandrill script.",
+    "license": "MIT",
+    "keywords": [
+        "mail",
+        "mandrill",
+        "mailchimp",
+        "mandrill php",
+        "API"
+    ],
+    "homepage": "https://github.com/dustinmoorman/mandrill",
+    "authors": [
+        {
+            "name": "Dustin Moorman",
+            "email": "dustin.moorman@gmail.com",
+            "homepage": "http://dustinmoorman.com/"
+        }
+    ],
+}
