@@ -5,6 +5,9 @@ Mandrill PHP client.
 
 ## Easy to use
 ```php
+
+   include 'Mandrill.php';
+
    $m = new Mandrill(
        'Dustin Moorman',
        'noreply@example.com', 
