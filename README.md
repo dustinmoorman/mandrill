@@ -10,7 +10,7 @@ Mandrill PHP client.
 
    $m = new Mandrill(
        'Dustin Moorman',
-       'from_me@example.com', 
+       'from_address@example.com', 
        'reply_to_me@example.com', 
        '5555MandrillApiKey5555555ANJCuUF-qg'
    );
