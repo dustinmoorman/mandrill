@@ -10,9 +10,9 @@ Mandrill PHP client.
 
    $m = new Mandrill(
        'Dustin Moorman',
-       'noreply@example.com', 
-       'dustin.moorman@gmail.com', 
-       '55555555555ANJCuUF-qg'
+       'from_me@example.com', 
+       'reply_to_me@example.com', 
+       '5555MandrillApiKey5555555ANJCuUF-qg'
    );
  
    $m->setHTML($html);
