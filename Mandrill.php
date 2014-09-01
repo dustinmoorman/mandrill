@@ -2,7 +2,6 @@
 /**
  * Class Mandrill
  * @author Dustin Moorman <dustin.moorman@gmail.com>
- * @package RCSEmail\API
  * @desc This class shouldn't be complicated. All we need to do is
  * open an engine to send email transmissions from mailchimp.
  * @license MIT
