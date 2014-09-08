@@ -16,7 +16,7 @@ Mandrill PHP client.
    );
  
    $m->setTitle('Test Email');
-   $m->setHTML($html);
+   $m->setHTML('<div>Sending a test email.</div>');
    $m->addRecipient('mistayayha@gmail.com', 'Yishai');
    $m->send();
 ```
