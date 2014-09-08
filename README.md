@@ -15,6 +15,7 @@ Mandrill PHP client.
        '5555MandrillApiKey5555555ANJCuUF-qg'
    );
  
+   $m->setTitle('Test Email');
    $m->setHTML($html);
    $m->addRecipient('mistayayha@gmail.com', 'Yishai');
    $m->send();
