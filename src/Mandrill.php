@@ -1,4 +1,7 @@
 <?php
+
+namespace Dustinmoorman\Mandrill;
+
 /**
  * Class Mandrill
  * @author Dustin Moorman <dustin.moorman@gmail.com>
