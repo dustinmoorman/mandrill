@@ -8,7 +8,7 @@ Mandrill PHP client.
 
    include 'Mandrill.php';
 
-   $m = new Mandrill(
+   $m = new \Dustinmoorman\Mandrill\Mandrill(
        'Dustin Moorman',
        'from_address@example.com', 
        'reply_to_me@example.com', 
