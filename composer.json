@@ -16,5 +16,10 @@
             "email": "dustin.moorman@gmail.com",
             "homepage": "http://dustinmoorman.com/"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dustinmoorman\\Mandrill\\": "src"
+        }
+    },
 }
