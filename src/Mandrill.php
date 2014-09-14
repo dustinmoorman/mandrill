@@ -66,19 +66,19 @@ class Mandrill {
             'ip_pool' => 'Main Pool'
         );
 
-        $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL, "http://mandrillapp.com/api/1.0/messages/send.json");
-        curl_setopt($ch,CURLOPT_POST, 1);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($transmission));
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen(json_encode($transmission))));
+        $ch = \curl_init();
+        \curl_setopt($ch,CURLOPT_URL, "http://mandrillapp.com/api/1.0/messages/send.json");
+        \curl_setopt($ch,CURLOPT_POST, 1);
+        \curl_setopt($ch,CURLOPT_POSTFIELDS, \json_encode($transmission));
+        \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        \curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . \strlen(\json_encode($transmission))));
 
-        $result = curl_exec($ch);
-        curl_close($ch);
-        $decoded = json_decode($result);
+        $result = \curl_exec($ch);
+        \curl_close($ch);
+        $decoded = \json_decode($result);
 
-        return is_null($decoded) ? $result : $decoded;
+        return \is_null($decoded) ? $result : $decoded;
     }
 
     public function addRecipient($email, $name = null){
