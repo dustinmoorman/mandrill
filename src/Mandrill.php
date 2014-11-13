@@ -68,7 +68,7 @@ class Mandrill {
         );
 
         $ch = \curl_init();
-        \curl_setopt($ch,CURLOPT_URL, "http://mandrillapp.com/api/1.0/messages/send.json");
+        \curl_setopt($ch,CURLOPT_URL, 'http://mandrillapp.com/api/1.0/messages/send.json');
         \curl_setopt($ch,CURLOPT_POST, 1);
         \curl_setopt($ch,CURLOPT_POSTFIELDS, \json_encode($transmission));
         \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
