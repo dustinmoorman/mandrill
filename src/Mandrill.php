@@ -14,7 +14,8 @@ namespace Dustinmoorman\Mandrill;
  *      'dustin.moorman@gmail.com', 
  *      '55555555555ANJCuUF-qg'
  *  );
- *
+ * 
+ *  $m->setTitle('Test Email');
  *  $m->setHTML($html);
  *  $m->addRecipient('mistayayha@gmail.com', 'Yishai');
  *  $m->send();
