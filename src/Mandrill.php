@@ -116,5 +116,4 @@ class Mandrill {
     public function setReplyTo($r){
         $this->reply_to = $r;
     }
-
 }
