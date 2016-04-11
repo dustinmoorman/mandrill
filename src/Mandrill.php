@@ -42,9 +42,7 @@ class Mandrill {
 
     public function send() {
 
-        if (empty($this->api_key)) {
-            throw new \Exception("Error - Unable to send: No API Key provided.");
-        }
+        $this->validateRequiredMailSettings();
 
         $transmission = array(
             'key' => $this->api_key,
@@ -90,6 +88,23 @@ class Mandrill {
         $decoded = \json_decode($result);
 
         return \is_null($decoded) ? $result : $decoded;
+    }
+
+    /**
+     * Validates required mail settings for API transmission. Throws
+     * an error message detailing what is missing.
+     * 
+     * @throws \Exception
+     */
+    protected function validateRequiredMailSettings()
+    {
+        try {
+            if (empty($this->api_key)) {
+                throw new \Exception("No API Key provided.");
+            }
+        } catch (\Exception $e) {
+            throw new \Exception("Error - Unable to send: {$e->getMessage()}");
+        }
     }
 
     public function addRecipient($email, $name = null) {
