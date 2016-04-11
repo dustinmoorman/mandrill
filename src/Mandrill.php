@@ -28,6 +28,7 @@ class Mandrill {
     protected $from_name;
     protected $from_email;
     protected $reply_to;
+    protected $recipients;
     protected $api_key;
 
     public function __construct($from_name, $from_email, $reply_to, $api_key = null) {
