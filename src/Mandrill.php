@@ -30,14 +30,21 @@ class Mandrill {
     protected $reply_to;
     protected $api_key;
 
-    public function __construct($from_name, $from_email, $reply_to, $api_key){
+    public function __construct($from_name, $from_email, $reply_to, $api_key = null){
         $this->setFromName($from_name);
         $this->setFromEmail($from_email);
         $this->setReplyTo($reply_to);
-        $this->setAPIKey($api_key);
+
+        if (!empty($api_key)) {
+            $this->setAPIKey($api_key);
+        }
     }
 
     public function send(){
+
+        if (empty($this->api_key)) {
+            throw new \Exception("Error - Unable to send: No API Key provided.");
+        }
 
         $transmission = array(
             'key' => $this->api_key,
