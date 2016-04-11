@@ -133,6 +133,11 @@ class Mandrill {
     }
 
     public function addRecipient($email, $name = null) {
+
+        if (empty($email)) {
+            throw new \Exception("Email required to add recipient.");
+        }
+
         $this->recipients[] = array(
             'type' => 'to',
             'email' => $email,
