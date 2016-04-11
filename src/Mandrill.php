@@ -101,7 +101,31 @@ class Mandrill {
     {
         try {
             if (empty($this->api_key)) {
-                throw new \Exception("No API Key provided.");
+                throw new \Exception("No API key set.");
+            }
+
+            if (empty($this->from_email)) {
+                throw new \Exception("From email not set.");
+            }
+
+            if (empty($this->from_name)) {
+                throw new \Exception("From name not set.");
+            }
+            
+            if (empty($this->reply_to)) {
+                throw new \Exception("No Reply-to set.");
+            }
+            
+            if (empty($this->html)) {
+                throw new \Exception("No HTML body set.");
+            }
+
+            if (empty($this->title)) {
+                throw new \Exception("No email subject set.");
+            }
+
+            if (count($this->recipients) == 0) {
+                throw new \Exception("No recipient(s) set.");
             }
         } catch (\Exception $e) {
             throw new \Exception("Error - Unable to send: {$e->getMessage()}");
