@@ -23,7 +23,7 @@ namespace Dustinmoorman\Mandrill;
  */
 class Mandrill {
 
-    protected $title;
+    protected $subject;
     protected $html;
     protected $from_name;
     protected $from_email;
@@ -49,7 +49,7 @@ class Mandrill {
             'key' => $this->api_key,
             'message' => array(
                 'html' => $this->html,
-                'subject' => $this->title,
+                'subject' => $this->subject,
                 'from_email' => $this->from_email,
                 'from_name' => $this->from_name,
                 'to' => $this->recipients,
@@ -120,7 +120,7 @@ class Mandrill {
                 throw new \Exception("No HTML body set.");
             }
 
-            if (empty($this->title)) {
+            if (empty($this->subject)) {
                 throw new \Exception("No email subject set.");
             }
 
@@ -140,8 +140,8 @@ class Mandrill {
         );
     }
 
-    public function setTitle($title) {
-        $this->title = $title;
+    public function setSubject($subject) {
+        $this->subject = $subject;
     }
 
     public function setHTML($html) {
