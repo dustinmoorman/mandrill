@@ -132,6 +132,13 @@ class Mandrill {
         }
     }
 
+    /**
+     * Adds a recipient to the instance of the mailer.
+     * 
+     * @param string $email
+     * @param  string | null $name
+     * @throws \Exception
+     */
     public function addRecipient($email, $name = null) {
 
         if (empty($email)) {
