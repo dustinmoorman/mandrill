@@ -30,7 +30,7 @@ class Mandrill {
     protected $reply_to;
     protected $api_key;
 
-    public function __construct($from_name, $from_email, $reply_to, $api_key = null){
+    public function __construct($from_name, $from_email, $reply_to, $api_key = null) {
         $this->setFromName($from_name);
         $this->setFromEmail($from_email);
         $this->setReplyTo($reply_to);
@@ -40,7 +40,7 @@ class Mandrill {
         }
     }
 
-    public function send(){
+    public function send() {
 
         if (empty($this->api_key)) {
             throw new \Exception("Error - Unable to send: No API Key provided.");
@@ -92,7 +92,7 @@ class Mandrill {
         return \is_null($decoded) ? $result : $decoded;
     }
 
-    public function addRecipient($email, $name = null){
+    public function addRecipient($email, $name = null) {
         $this->recipients[] = array(
             'type' => 'to',
             'email' => $email,
@@ -100,27 +100,27 @@ class Mandrill {
         );
     }
 
-    public function setTitle($title){
+    public function setTitle($title) {
         $this->title = $title;
     }
 
-    public function setHTML($html){
+    public function setHTML($html) {
         $this->html = $html;
     }
 
-    public function setFromName($f){
+    public function setFromName($f) {
         $this->from_name = $f;
     }
 
-    public function setFromEmail($e){
+    public function setFromEmail($e) {
         $this->from_email = $e;
     }
 
-    public function setAPIKey($a){
+    public function setAPIKey($a) {
         $this->api_key = $a;
     }
 
-    public function setReplyTo($r){
+    public function setReplyTo($r) {
         $this->reply_to = $r;
     }
 }
