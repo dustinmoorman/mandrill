@@ -108,19 +108,19 @@ class Mandrill {
         $this->html = $html;
     }
 
-    public function setFromName($f) {
-        $this->from_name = $f;
+    public function setFromName($fromName) {
+        $this->from_name = $fromName;
     }
 
-    public function setFromEmail($e) {
-        $this->from_email = $e;
+    public function setFromEmail($fromEmail) {
+        $this->from_email = $fromEmail;
     }
 
-    public function setAPIKey($a) {
-        $this->api_key = $a;
+    public function setAPIKey($apiKey) {
+        $this->api_key = $apiKey;
     }
 
-    public function setReplyTo($r) {
-        $this->reply_to = $r;
+    public function setReplyTo($replyTo) {
+        $this->reply_to = $replyTo;
     }
 }
