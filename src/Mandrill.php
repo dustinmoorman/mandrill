@@ -23,14 +23,35 @@ namespace Dustinmoorman\Mandrill;
  */
 class Mandrill {
 
+    /** @var  string */
     protected $subject;
+    
+    /** @var  string */
     protected $html;
+    
+    /** @var  string */
     protected $from_name;
+    
+    /** @var  string */
     protected $from_email;
+    
+    /** @var  string */
     protected $reply_to;
+    
+    /** @var  array */
     protected $recipients;
+    
+    /** @var  string */
     protected $api_key;
 
+    /**
+     * Mandrill constructor.
+     * 
+     * @param string $from_name
+     * @param string $from_email
+     * @param string $reply_to
+     * @param string | null $api_key
+     */
     public function __construct($from_name, $from_email, $reply_to, $api_key = null) {
         $this->setFromName($from_name);
         $this->setFromEmail($from_email);
@@ -41,6 +62,12 @@ class Mandrill {
         }
     }
 
+    /**
+     * Sends the mail configured in this instance.
+     * 
+     * @return mixed
+     * @throws \Exception
+     */
     public function send() {
 
         $this->validateRequiredMailSettings();
@@ -152,26 +179,44 @@ class Mandrill {
         );
     }
 
+    /**
+     * @param string $subject
+     */
     public function setSubject($subject) {
         $this->subject = $subject;
     }
 
+    /**
+     * @param string $html
+     */
     public function setHTML($html) {
         $this->html = $html;
     }
 
+    /**
+     * @param string $fromName
+     */
     public function setFromName($fromName) {
         $this->from_name = $fromName;
     }
 
+    /**
+     * @param string $fromEmail
+     */
     public function setFromEmail($fromEmail) {
         $this->from_email = $fromEmail;
     }
 
+    /**
+     * @param string $apiKey
+     */
     public function setAPIKey($apiKey) {
         $this->api_key = $apiKey;
     }
 
+    /**
+     * @param string $replyTo
+     */
     public function setReplyTo($replyTo) {
         $this->reply_to = $replyTo;
     }
