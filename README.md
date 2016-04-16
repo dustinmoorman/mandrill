@@ -1,6 +1,6 @@
 mandrill
 ========
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://raw.githubusercontent.com/dustinmoorman/mandrill/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dustinmoorman/mandrill/master/LICENSE)
 
 Mandrill PHP client.
 
